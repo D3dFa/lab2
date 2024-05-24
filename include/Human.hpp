@@ -1,15 +1,21 @@
 #pragma once
-#include <coeffs.hpp>
+#include <Сoeffs.hpp>
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 class Human {
 public:
     ~Human();
+
 protected:
-    std::vector<coeffs*> CoefficientsVector;// вектор коэффициентов уравнений
+    std::vector<Сoeffs*> coeffsVector;
     std::vector<std::vector<double>*> solutionVector;
 
-    void solution();
-    void read_file();
+    void read_file(const std::string& filename);
+
+    void TrueSolution(Сoeffs* coeffs);
+    void FalseSolution(Сoeffs* coeffs);
 };
